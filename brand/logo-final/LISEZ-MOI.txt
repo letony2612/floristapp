@@ -1,0 +1,32 @@
+LƠI FLEUR · logo final
+Version : « Tige », ơ d'origine, l à pied arrondi.
+
+svg/      logo vectoriel (à utiliser en priorité : net à toutes les tailles)
+          principal  = lơi + FLEUR dessous
+          horizontal = lơi + FLEUR à droite
+          mot        = lơi seul
+          couleurs   : encre, creme, mousse, terre
+png/      les mêmes en PNG transparent, 2000 px de large
+icones/   icônes carrées (app, réseaux, favicon)
+          icone-*-1024.png : 1024 × 1024, coins droits (iOS les arrondit lui-même)
+          icone-mousse-arrondie-*.png : 512, 180, 32 px
+          favicon.svg : pour le site
+apercu/   planche récapitulative
+
+Couleurs
+  Encre       #1F1E1A
+  Lụa (crème) #EEE7DA
+  Rêu (mousse)#4B5138
+  Đất (terre) #A35E3F
+  Kraft       #B7976C
+  Đá (pierre) #D8CCB6
+  Lá          #26301F
+
+Polices (Google Fonts, gratuites, accents vietnamiens complets)
+  Be Vietnam Pro : le mot FLEUR, textes, signalétique
+  Fraunces (axe Soft 100) : titres, citations
+
+Règles
+  Ne pas retaper « lơi » dans une police : utiliser les fichiers.
+  Encre sur fond clair, crème sur mousse ou fond sombre.
+  Garder autour du logo un espace libre égal à la hauteur du o.
