@@ -6,6 +6,24 @@
       "sourceType": "github",
       "skillPath": "svg-logo-designer/SKILL.md",
       "computedHash": "c591208a052cc9f7deb77be1183e4627daf54dbf575ea2653f519f29fe3bd4c8"
+    },
+    "logo-generator": {
+      "source": "op7418/logo-generator-skill",
+      "sourceType": "github",
+      "skillPath": "SKILL.md",
+      "computedHash": "d949329c11df3efa25bc1cc387c92fc8b86077883fcd737803675e42e2da75eb"
+    },
+    "marketing-ideas": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/marketing-ideas/SKILL.md",
+      "computedHash": "63a1f27ff2c8ca77bf9ad8d2df4252d214d597b437c7ba2d23619248225000ad"
+    },
+    "marketing-psychology": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/marketing-psychology/SKILL.md",
+      "computedHash": "50d735eb0f5c36f379ed2200f21aeacc9b9ad85667b5d33ec6111857352a1340"
     }
   }
 }

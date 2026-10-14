@@ -1,0 +1,310 @@
+<title>Charte LƠI Fleur</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@300;400;500&family=Fraunces:ital,opsz,wght,SOFT@0,9..144,300..500,100;1,9..144,300..500,100&display=swap">
+<style>
+/* Layout : un cahier de marque sur papier crème, une colonne éditoriale, les mockups en grand */
+:root{
+  --lua:#EEE7DA;   /* Lụa · crème soie : fond */
+  --da:#D8CCB6;    /* Đá · pierre calcaire */
+  --kraft:#B7976C;
+  --reu:#4B5138;   /* Rêu · mousse */
+  --la:#26301F;    /* Lá · feuillage profond */
+  --dat:#A35E3F;   /* Đất · terre cuite */
+  --muc:#1F1E1A;   /* Mực · encre */
+  --muted:#6B675C;
+  --line:#CFC3AC;
+  --serif:"Fraunces", "Iowan Old Style", Georgia, serif;
+  --sans:"Be Vietnam Pro", "Helvetica Neue", Arial, sans-serif;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{background:var(--lua);color:var(--muc);font-family:var(--sans);font-weight:300;font-size:16px;line-height:1.6;margin:0}
+.wrap{max-width:1180px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+.serif{font-family:var(--serif);font-variation-settings:"SOFT" 100}
+h1,h2,h3{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:300;margin:0;text-wrap:balance;letter-spacing:-.01em}
+h2{font-size:clamp(30px,4.4vw,48px);line-height:1.08}
+h3{font-size:22px;line-height:1.2}
+p{margin:0;max-width:62ch}
+.eyebrow{font-family:var(--sans);font-weight:500;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--muted)}
+section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.4fr);gap:24px 48px;align-items:end;margin-bottom:44px}
+.sec-head p{color:var(--muted)}
+@media (max-width:760px){.sec-head{grid-template-columns:1fr}}
+
+/* Couverture */
+.cover{background:var(--reu);color:var(--lua)}
+.cover .wrap{padding-block:clamp(48px,9vw,112px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px 64px;align-items:end}
+.cover .mark{color:var(--lua);width:min(100%,520px)}
+.cover .mark svg{width:100%;height:auto;display:block}
+.cover .eyebrow{color:#C9C6AE}
+.cover blockquote{margin:0;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-weight:300;font-size:clamp(22px,2.6vw,30px);line-height:1.3}
+.cover blockquote span{display:block;font-style:normal;font-family:var(--sans);font-size:15px;line-height:1.6;margin-top:14px;color:#D9D6C2}
+.cover-meta{display:flex;flex-wrap:wrap;gap:8px 28px;margin-top:28px}
+@media (max-width:820px){.cover .wrap{grid-template-columns:1fr}}
+
+/* L'esprit */
+.gloss{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border-top:1px solid var(--line)}
+.gloss div{padding:22px 22px 26px 0;border-bottom:1px solid var(--line)}
+.gloss dt{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-size:24px;font-weight:300}
+.gloss dd{margin:6px 0 0;color:var(--muted);font-size:15px;max-width:34ch}
+@media (max-width:820px){.gloss{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.gloss{grid-template-columns:1fr}}
+.vi-def{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:24px;margin-top:40px}
+.vi-def b{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-style:italic;font-size:26px;display:block;margin-bottom:4px}
+.vi-def p{color:var(--muted);font-size:15px}
+@media (max-width:700px){.vi-def{grid-template-columns:1fr}}
+
+/* Logos */
+.logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+@media (max-width:900px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.logos{grid-template-columns:1fr}}
+.logo-card{appearance:none;font:inherit;text-align:left;color:inherit;cursor:pointer;background:#F5F0E6;border:1px solid var(--line);padding:0;display:flex;flex-direction:column;transition:border-color .2s, background .2s}
+.logo-card:hover{border-color:var(--kraft)}
+.logo-card:focus-visible{outline:2px solid var(--reu);outline-offset:3px}
+.logo-card[aria-pressed="true"]{border-color:var(--reu);box-shadow:inset 0 0 0 1px var(--reu)}
+.logo-card .art{aspect-ratio:4/3;position:relative;color:var(--muc)}
+.logo-card .art svg{position:absolute;left:12%;top:14%;width:76%;height:72%}
+.logo-card .txt{padding:16px 20px 20px;border-top:1px solid var(--line);display:grid;gap:6px;flex:1}
+.logo-card .row{display:flex;justify-content:space-between;align-items:baseline;gap:12px}
+.logo-card h3{font-size:24px}
+.logo-card .style{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--dat)}
+.logo-card p{font-size:14.5px;color:var(--muted);line-height:1.55}
+.logo-card .pick{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--reu);margin-top:6px}
+.logo-card[aria-pressed="true"] .pick::before{content:"● "}
+.reco{display:inline-block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;background:var(--reu);color:var(--lua);padding:3px 8px;vertical-align:middle;margin-left:8px}
+
+/* Déclinaisons couleur */
+.variants{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px;margin-top:20px}
+.variants div{aspect-ratio:3/2;display:grid;place-items:center;padding:18px 22px}
+.variants svg{max-width:100%;max-height:100%;width:auto;height:auto}
+.variants span{display:block}
+@media (max-width:700px){.variants{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Mockups */
+.mock-bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:var(--lua);border-bottom:1px solid var(--line);margin-bottom:28px}
+.mock-bar .in{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.chip{appearance:none;font:inherit;cursor:pointer;border:1px solid var(--line);background:transparent;color:var(--muc);padding:8px 14px;font-size:13px;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.chip svg{height:18px;width:auto}
+.chip[aria-pressed="true"]{background:var(--muc);color:var(--lua);border-color:var(--muc)}
+.chip:focus-visible{outline:2px solid var(--reu);outline-offset:2px}
+.mocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.mocks figure{margin:0}
+.mocks img{display:block;width:100%;height:auto;aspect-ratio:919/1149;object-fit:cover;background:var(--da)}
+.mocks figcaption{display:flex;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);padding-top:10px}
+.mocks figcaption b{font-weight:500;color:var(--muc)}
+@media (max-width:620px){.mocks{grid-template-columns:1fr}}
+
+/* Couleurs */
+.swatches{display:grid;grid-template-columns:repeat(7,minmax(0,1fr));gap:10px}
+.sw .chipc{aspect-ratio:3/4;border:1px solid rgba(31,30,26,.08)}
+.sw b{display:block;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:400;font-size:20px;margin-top:10px}
+.sw i{font-style:normal;display:block;font-size:12.5px;color:var(--muted)}
+.sw code{font-family:var(--sans);font-size:12px;font-variant-numeric:tabular-nums;display:block;margin-top:6px;line-height:1.5}
+@media (max-width:900px){.swatches{grid-template-columns:repeat(4,minmax(0,1fr))}}
+@media (max-width:520px){.swatches{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.ratio{display:flex;height:44px;margin-top:28px;border:1px solid var(--line)}
+.ratio span{display:block}
+.ratio-legend{display:flex;flex-wrap:wrap;gap:6px 20px;font-size:13px;color:var(--muted);margin-top:10px}
+
+/* Typo */
+.type{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.type .card{background:#F5F0E6;border:1px solid var(--line);padding:28px}
+.type .big{font-size:clamp(64px,9vw,112px);line-height:1;margin:14px 0 18px}
+.type .alpha{font-size:18px;line-height:1.5;color:var(--muted);word-break:break-word}
+.type dl{display:grid;grid-template-columns:auto 1fr;gap:4px 16px;font-size:14px;margin:18px 0 0}
+.type dt{color:var(--muted)}
+.type dd{margin:0}
+@media (max-width:760px){.type{grid-template-columns:1fr}}
+.scale{margin-top:20px;border-top:1px solid var(--line)}
+.scale div{display:grid;grid-template-columns:120px minmax(0,1fr);gap:16px;align-items:baseline;padding:16px 0;border-bottom:1px solid var(--line)}
+.scale small{font-size:12px;color:var(--muted);font-variant-numeric:tabular-nums}
+
+/* Règles */
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.rules .card{border:1px solid var(--line);background:#F5F0E6}
+.rules .demo{aspect-ratio:16/10;display:grid;place-items:center;padding:24px;position:relative}
+.rules .demo svg{max-width:78%;max-height:70%;width:auto;height:auto}
+.rules .card p{padding:14px 18px 18px;font-size:14px;color:var(--muted);border-top:1px solid var(--line)}
+.rules .card p b{color:var(--muc);font-weight:500}
+.clear{outline:1px dashed var(--dat);outline-offset:18px}
+.no{position:relative}
+.no::after{content:"";position:absolute;inset:14px;background:linear-gradient(to top right,transparent calc(50% - .75px),var(--dat) calc(50% - .75px),var(--dat) calc(50% + .75px),transparent calc(50% + .75px))}
+@media (max-width:820px){.rules{grid-template-columns:1fr 1fr}}
+@media (max-width:520px){.rules{grid-template-columns:1fr}}
+
+/* Voix */
+.voice{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:28px}
+.voice h3{margin-bottom:8px}
+.voice p{color:var(--muted);font-size:15px}
+.voice q{display:block;font-family:var(--serif);font-variation-settings:"SOFT" 100;font-style:italic;font-size:19px;color:var(--muc);margin-top:12px;quotes:"« " " »"}
+@media (max-width:760px){.voice{grid-template-columns:1fr}}
+footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+%%SYMBOLS%%
+</svg>
+
+<header class="cover">
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Charte graphique · fleuriste</p>
+      <div class="mark" style="margin-top:28px"><svg viewBox="%%VB_buong%%" role="img" aria-label="LƠI Fleur"><use href="#m-buong"/></svg></div>
+    </div>
+    <div>
+      <blockquote>Vẻ đẹp là sự tự do cảm xúc, vẻ đẹp là không khuôn khổ.
+        <span>La beauté est la liberté des émotions. La beauté n’a pas de cadre.</span></blockquote>
+      <div class="cover-meta eyebrow"><span>6 pistes de logo</span><span>24 mockups</span><span>7 couleurs</span><span>2 polices</span></div>
+    </div>
+  </div>
+</header>
+
+<main>
+<section id="esprit">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">01 · L’esprit</p><h2>Lơi : ce qui bouge librement, sans être retenu.</h2></div>
+      <p>En vietnamien, <em>lơi</em> décrit la souplesse d’un geste qu’on ne force pas : une tige qui ploie, un ruban qui flotte, un bouquet qui n’est pas serré. Toute l’identité part de là : des formes qui se relâchent, beaucoup d’air autour, des matières naturelles.</p>
+    </div>
+    <dl class="gloss">
+      <div><dt>Souple et fluide</dt><dd>Un mouvement naturel, doux, sans rigidité.</dd></div>
+      <div><dt>Ondulant</dt><dd>Ce qui se balance ou ondule délicatement.</dd></div>
+      <div><dt>Languissant</dt><dd>Une attitude douce, nonchalante, parfois sensuelle.</dd></div>
+      <div><dt>Nonchalant</dt><dd>Détendu, sans contrainte ni effort apparent.</dd></div>
+      <div><dt>Flottant</dt><dd>Qui bouge librement, légèrement, au gré du vent.</dd></div>
+      <div><dt>Avec grâce</dt><dd>L’élégance d’un mouvement spontané.</dd></div>
+    </dl>
+    <div class="vi-def">
+      <div><b>Lả lơi</b><p>Une attitude langoureuse, charmeuse, parfois séductrice.</p></div>
+      <div><b>Buông lơi</b><p>Relâché, flottant, qui retombe ou se balance librement.</p></div>
+      <div><b>Buông lơ</b><p>Négligemment relâché, sans tension ni maintien strict.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="logos">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">02 · Logo</p><h2>Six pistes, six manières de dire « lơi ».</h2></div>
+      <p>Chaque piste traduit le nom différemment. Le signe commun : le crochet du <span class="serif">Ơ</span> vietnamien, qui devient une feuille, un pétale ou une tige. Cliquez sur une piste pour la voir sur les mockups plus bas.</p>
+    </div>
+    <div class="logos" id="logo-grid">%%CARDS%%</div>
+  </div>
+</section>
+
+<section id="mockups" style="padding-top:0;border-top:0">
+  <div class="mock-bar"><div class="wrap in" role="group" aria-label="Choisir le logo affiché sur les mockups">%%CHIPS%%</div></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">03 · Mockups</p><h2 id="mock-title">Buông, en situation.</h2></div>
+      <p>Vos quatre photos de référence, nettoyées de leur texte d’origine et habillées avec le logo choisi : boîte en kraft imprimée à l’encre, store en toile mousse, vitrophanie blanche, sac en papier et site web.</p>
+    </div>
+    <div class="mocks">
+      <figure><img id="mk-boite" alt="Boîte cadeau en kraft posée sur une pierre, logo imprimé" width="919" height="1149" src="mockups/buong-boite.jpg"><figcaption><b>Boîte cadeau kraft</b><span>impression 1 couleur, encre Mực</span></figcaption></figure>
+      <figure><img id="mk-devanture" alt="Devanture de la boutique avec store vert mousse et vitrine" width="919" height="1149" src="mockups/buong-devanture.jpg"><figcaption><b>Devanture</b><span>store Rêu, lettrage crème · vitrophanie</span></figcaption></figure>
+      <figure><img id="mk-sac" alt="Sac en papier crème porté à la main, logo imprimé" width="919" height="1149" src="mockups/buong-sac.jpg"><figcaption><b>Sac en papier</b><span>papier crème, encre Mực</span></figcaption></figure>
+      <figure><img id="mk-ecran" alt="Ordinateur portable affichant le site de la boutique" width="919" height="1149" src="mockups/buong-ecran.jpg"><figcaption><b>Site web</b><span>fond Rêu, texte Lụa</span></figcaption></figure>
+    </div>
+  </div>
+</section>
+
+<section id="couleurs">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">04 · Couleurs</p><h2>Une palette de matières : soie, pierre, papier, mousse.</h2></div>
+      <p>Les noms viennent du vietnamien et de ce qu’on trouve en boutique. Les fleurs apportent la couleur vive ; la marque reste en retrait pour les laisser parler. Valeurs CMJN indicatives, à valider avec l’imprimeur sur épreuve.</p>
+    </div>
+    <div class="swatches">%%SWATCHES%%</div>
+    <div class="ratio" aria-hidden="true">
+      <span style="flex:45;background:var(--lua)"></span><span style="flex:18;background:var(--da)"></span><span style="flex:14;background:var(--reu)"></span><span style="flex:10;background:var(--kraft)"></span><span style="flex:8;background:var(--muc)"></span><span style="flex:3;background:var(--la)"></span><span style="flex:2;background:var(--dat)"></span>
+    </div>
+    <div class="ratio-legend"><span>Proportions conseillées :</span><span>Lụa 45 %</span><span>Đá 18 %</span><span>Rêu 14 %</span><span>Kraft 10 %</span><span>Mực 8 %</span><span>Lá 3 %</span><span>Đất 2 % (accent uniquement)</span></div>
+  </div>
+</section>
+
+<section id="typo">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">05 · Typographie</p><h2>Une serif douce pour la voix, une sans-serif vietnamienne pour l’information.</h2></div>
+      <p>Les deux familles sont gratuites (Google Fonts) et gèrent tous les accents vietnamiens : ơ, ư, ả, ẹ, ổ… indispensable pour écrire « Lơi » et la devise correctement partout.</p>
+    </div>
+    <div class="type">
+      <div class="card">
+        <p class="eyebrow">Titres · logo</p>
+        <div class="big serif" style="font-weight:300">Fraunces</div>
+        <p class="alpha serif">Aa Bb Cc Đđ Ơơ Ưư Ẻẻ Ổổ — <i>Lả lơi, buông lơi</i><br>0 1 2 3 4 5 6 7 8 9</p>
+        <dl><dt>Graisse</dt><dd>Light 300, Regular 400 (italique pour les citations)</dd><dt>Réglage</dt><dd>axe « Soft » à 100 : empattements arrondis</dd><dt>Usage</dt><dd>titres, devise, noms de bouquets, cartes</dd></dl>
+      </div>
+      <div class="card">
+        <p class="eyebrow">Texte · signalétique</p>
+        <div class="big" style="font-family:var(--sans);font-weight:300;letter-spacing:-.02em">Be Vietnam Pro</div>
+        <p class="alpha" style="font-family:var(--sans)">Aa Bb Cc Đđ Ơơ Ưư Ẻẻ Ổổ — FLEURS DE SAISON<br>0 1 2 3 4 5 6 7 8 9</p>
+        <dl><dt>Graisse</dt><dd>Light 300 pour le texte, Medium 500 pour les petites capitales</dd><dt>Réglage</dt><dd>capitales espacées de 15 à 25 %</dd><dt>Usage</dt><dd>texte courant, prix, horaires, étiquettes</dd></dl>
+      </div>
+    </div>
+    <div class="scale">
+      <div><small>Titre · 48 px</small><span class="serif" style="font-size:clamp(30px,4.4vw,48px);line-height:1.1">Bouquet de saison</span></div>
+      <div><small>Citation · 26 px</small><span class="serif" style="font-size:26px;font-style:italic">Vẻ đẹp là sự tự do cảm xúc</span></div>
+      <div><small>Texte · 16 px</small><span>Pivoines, renoncules et feuillage d’eucalyptus, montés sans attache serrée.</span></div>
+      <div><small>Étiquette · 11 px</small><span class="eyebrow" style="color:var(--muc)">Ouvert du mardi au dimanche · 9 h – 19 h</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="regles">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">06 · Usage du logo</p><h2>Laisser respirer le logo.</h2></div>
+      <p>Comme un bouquet <em>lơi</em>, le logo a besoin d’air autour de lui. Ces règles valent pour toutes les pistes.</p>
+    </div>
+    <div class="rules">
+      <div class="card"><div class="demo"><svg class="clear" viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Zone de protection.</b> Garder autour du logo un espace vide égal à la hauteur du <span class="serif">O</span>.</p></div>
+      <div class="card"><div class="demo" style="background:var(--reu);color:var(--lua)"><svg viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Deux couleurs seulement.</b> Encre Mực sur fond clair, crème Lụa sur fond Rêu, Lá ou photo sombre.</p></div>
+      <div class="card"><div class="demo"><svg viewBox="%%VB_buong%%" style="max-width:34%"><use href="#m-buong"/></svg></div><p><b>Taille minimum.</b> 25 mm de large en impression, 120 px à l’écran. En dessous, utiliser l’arche ou le cachet.</p></div>
+      <div class="card"><div class="demo no"><svg viewBox="%%VB_buong%%" style="transform:scaleX(1.45)"><use href="#m-buong"/></svg></div><p><b>Ne pas déformer</b> ni étirer le logo.</p></div>
+      <div class="card"><div class="demo no" style="color:var(--dat)"><svg viewBox="%%VB_buong%%" style="filter:drop-shadow(4px 4px 0 #26301F)"><use href="#m-buong"/></svg></div><p><b>Ne pas ajouter</b> d’ombre, de contour ni de couleur vive.</p></div>
+      <div class="card"><div class="demo no" style="background:linear-gradient(120deg,#c9a7b8,#a7b8c9)"><svg viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Éviter les fonds chargés</b> ou colorés qui étouffent le trait fin.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="voix">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">07 · Ton de voix</p><h2>Parler comme on compose un bouquet : simplement, sans forcer.</h2></div>
+      <p>Phrases courtes, vocabulaire concret des fleurs, une touche de vietnamien quand elle a du sens.</p>
+    </div>
+    <div class="voice">
+      <div><h3>Libre</h3><p>On ne promet pas la perfection, on parle de saison, de ce qui est beau aujourd’hui.</p><q>Ce matin : renoncules et branches de cerisier.</q></div>
+      <div><h3>Doux</h3><p>Un ton chaleureux, jamais pressant. Pas de majuscules criardes ni de points d’exclamation en rafale.</p><q>Passez nous voir, on vous composera quelque chose.</q></div>
+      <div><h3>Précis</h3><p>Nommer les fleurs, les tiges, les prix. La précision rassure et montre le savoir-faire.</p><q>Bouquet libre · 12 tiges · 45 €</q></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">LƠI Fleur · charte graphique, version 1 · Logos SVG (encre, crème, mousse) et mockups disponibles dans le dossier <code>brand/</code> du dépôt.</div></footer>
+
+<script>
+(function(){
+  var NAMES=%%NAMES%%;
+  var shots=['boite','devanture','sac','ecran'];
+  function select(k){
+    if(!NAMES[k]) return;
+    shots.forEach(function(s){var im=document.getElementById('mk-'+s); if(im) im.src='mockups/'+k+'-'+s+'.jpg';});
+    document.querySelectorAll('[data-k]').forEach(function(b){b.setAttribute('aria-pressed', b.getAttribute('data-k')===k?'true':'false');});
+    document.getElementById('mock-title').textContent=NAMES[k]+', en situation.';
+    try{localStorage.setItem('loi-logo',k);}catch(e){}
+  }
+  document.querySelectorAll('[data-k]').forEach(function(b){
+    b.addEventListener('click',function(){select(b.getAttribute('data-k')); if(b.classList.contains('logo-card')) document.getElementById('mockups').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
+  });
+  var start=(location.hash||'').slice(1);
+  if(!NAMES[start]){try{start=localStorage.getItem('loi-logo')||'buong';}catch(e){start='buong';}}
+  select(NAMES[start]?start:'buong');
+  // preload the other mockups once the page is idle
+  setTimeout(function(){Object.keys(NAMES).forEach(function(k){shots.forEach(function(s){var i=new Image(); i.src='mockups/'+k+'-'+s+'.jpg';});});},1500);
+})();
+</script>
