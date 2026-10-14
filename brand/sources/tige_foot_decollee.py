@@ -14,7 +14,7 @@ TOP='L32,70 C32,40 46,21 70,21 C82,21 91,25 95,35 L101,32 C97,19 86,9 70,8 C40,6
 l_flat=t3.P('M17,200 L52,200 L52,185 L32,185 '+TOP)
 l_round=t3.P('M17,172 C17,190 26,200 42,200 L52,200 L52,185 L42,185 C35,185 32,181 32,172 '+TOP)
 V=[('Sans pied',t3.P(stem_full)+rest),('Pied droit',l_flat+rest),('Pied arrondi',l_round+rest)]
-vb=t3.vb; zvb='0 80 178 135'
+vb=t3.vb; zvb='0 60 180 157'
 for name,b in zip(('sans-pied','pied-droit','pied-arrondi'),[v[1] for v in V]):
     open(f'/home/user/floristapp/brand/logos/tige-decollee-{name}-encre.svg','w').write(f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}">{b.replace("currentColor","#1F1E1A")}</svg>\n')
 F=ImageFont.truetype(FD+'bvp-med.ttf',22)
