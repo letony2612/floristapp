@@ -4,7 +4,8 @@ from composite import Decal, light, VINYL
 import nmock
 B='/tmp/claude-0/-home-user-floristapp/610656c1-7c28-5e23-9b56-a3d8582b25a7/scratchpad/'
 MK=B+'mk/'; FD=B+'fonts/'; OUT='/home/user/floristapp/nappli/mockups/'
-C=json.load(open('nconcepts.json'))
+import os
+C=json.load(open(os.environ.get('NCONF','nconcepts.json')))
 def load(i): return cv2.cvtColor(cv2.imread(MK+f'clean{i}.png'),cv2.COLOR_BGR2RGB)
 def alpha(k,kind,width):
     vb,body=C[k][kind]; x,y,w,h=map(float,vb.split())

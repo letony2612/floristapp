@@ -3,7 +3,7 @@ from PIL import Image
 B='/tmp/claude-0/-home-user-floristapp/610656c1-7c28-5e23-9b56-a3d8582b25a7/scratchpad/'
 FD=B+'fonts/'; OUT='/home/user/floristapp/nappli/mockups/'; TMP=B+'nmock/'
 os.makedirs(OUT,exist_ok=True); os.makedirs(TMP,exist_ok=True)
-C=json.load(open('nconcepts.json'))
+C=json.load(open(os.environ.get('NCONF','nconcepts.json')))
 def z(vb): x,y,w,h=vb.split(); return f'0 0 {w} {h}'
 def sym(k): return ''.join(f'<symbol id="{n}-{k}" viewBox="{C[k][n][0]}">{C[k][n][1]}</symbol>' for n in ('main','icon'))
 def use(k,n,style='',cls=''): return f'<svg class="{cls}" viewBox="{z(C[k][n][0])}" style="{style}"><use href="#{n}-{k}"/></svg>'
