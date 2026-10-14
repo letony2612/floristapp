@@ -1,0 +1,284 @@
+<title>Nappli · Identité</title>
+<meta name="claude:viewport-fit-sides" content="cover">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Allura&display=swap">
+<style>
+/* Layout : la page reprend le site, blanc, brume pastel, Inter, pilules noires */
+:root{
+  --ink:#000; --ink-2:#5C5C5C; --ink-3:#9B9B9B; --line:#ECECEC; --paper:#FFFFFF; --soft:#F7F7F8;
+  --stamp:#2A44D8; --guide:#8F9BFF; --red:#FF3B30; --teal:#0C3A44;
+  --m1:#BDEBF0; --m2:#CFE6FF; --m3:#DCD6FF; --m4:#FFD9E8;
+  --sans:"Inter",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;
+  --script:"Allura","Snell Roundhand",cursive;
+  color-scheme:light;
+}
+*{box-sizing:border-box}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1160px;margin:0 auto;padding-left:max(20px,env(safe-area-inset-left,0px));padding-right:max(20px,env(safe-area-inset-right,0px))}
+h1,h2,h3{margin:0;font-weight:600;letter-spacing:-.03em;text-wrap:balance}
+h2{font-size:clamp(30px,4.4vw,48px);line-height:1.05}
+h3{font-size:20px;letter-spacing:-.02em}
+p{margin:0;max-width:60ch}
+.eyebrow{font-size:12px;font-weight:500;color:var(--ink-3);letter-spacing:.02em}
+.pill{display:inline-flex;align-items:center;gap:8px;background:var(--ink);color:#fff;border-radius:999px;padding:8px 14px;font-size:13px;font-weight:500}
+section{padding-block:clamp(64px,9vw,120px)}
+.sec-head{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.2fr);gap:20px 56px;align-items:end;margin-bottom:44px}
+.sec-head p{color:var(--ink-2)}
+@media (max-width:760px){.sec-head{grid-template-columns:minmax(0,1fr)}}
+.mist{position:absolute;inset:-10%;filter:blur(60px);pointer-events:none;
+  background:radial-gradient(40% 35% at 22% 30%,var(--m1) 0,transparent 70%),radial-gradient(45% 40% at 78% 30%,var(--m2) 0,transparent 70%),
+  radial-gradient(40% 35% at 60% 80%,var(--m3) 0,transparent 70%),radial-gradient(30% 30% at 15% 85%,var(--m4) 0,transparent 70%)}
+svg{fill:currentColor;overflow:visible}
+
+/* Couverture */
+.cover{position:relative;overflow:hidden;min-height:min(720px,92vh);display:flex;align-items:center}
+.cover .wrap{position:relative;width:100%;padding-block:96px;text-align:center}
+.cover h1{font-size:clamp(40px,7vw,84px);line-height:1.02;letter-spacing:-.045em}
+.cover .sub{margin:22px auto 0;color:var(--ink-2);font-size:clamp(17px,1.8vw,20px)}
+.cover .meta{display:flex;flex-wrap:wrap;justify-content:center;gap:8px;margin-top:36px}
+.cover .meta span{background:rgba(255,255,255,.7);border:1px solid rgba(0,0,0,.06);backdrop-filter:blur(8px);border-radius:999px;padding:7px 14px;font-size:13px;font-weight:500}
+
+/* Point de départ */
+.now{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:20px}
+.now .card{background:var(--soft);border-radius:24px;padding:36px;display:flex;align-items:center;justify-content:center;min-height:260px;gap:40px}
+.verdict{display:grid;gap:14px;align-content:center}
+.verdict div{display:grid;grid-template-columns:110px minmax(0,1fr);gap:14px;padding-bottom:14px;border-bottom:1px solid var(--line)}
+.verdict b{font-weight:600}
+.verdict span{color:var(--ink-2)}
+@media (max-width:760px){.now{grid-template-columns:minmax(0,1fr)}.verdict div{grid-template-columns:minmax(0,1fr);gap:2px}}
+
+/* Pistes */
+.logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+@media (max-width:900px){.logos{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:560px){.logos{grid-template-columns:minmax(0,1fr)}}
+.logo-card{appearance:none;font:inherit;color:inherit;text-align:left;cursor:pointer;background:var(--paper);border:1px solid var(--line);border-radius:24px;padding:0;overflow:hidden;display:flex;flex-direction:column;transition:border-color .2s,box-shadow .2s}
+.logo-card:hover{border-color:#d6d6d6;box-shadow:0 20px 50px -30px rgba(60,80,160,.35)}
+.logo-card:focus-visible{outline:2px solid var(--stamp);outline-offset:3px}
+.logo-card[aria-pressed="true"]{border-color:var(--ink);box-shadow:0 0 0 1px var(--ink)}
+.logo-card .art{position:relative;aspect-ratio:16/10;background:var(--soft)}
+.logo-card .art .word{position:absolute;left:14%;right:14%;top:26%;height:40%;width:72%}
+.logo-card .art .tile{position:absolute;right:14px;bottom:14px;width:44px;height:44px;border-radius:22.5%;background:#000;color:#fff;padding:9px}
+.logo-card .art .tile svg{width:100%;height:100%}
+.logo-card .txt{padding:18px 20px 20px;display:grid;gap:6px;flex:1}
+.logo-card .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.logo-card .style{font-size:12px;font-weight:500;color:var(--ink-3)}
+.logo-card p{font-size:14.5px;color:var(--ink-2);line-height:1.5}
+.logo-card .pick{margin-top:8px;justify-self:start;font-size:12.5px;font-weight:500;border:1px solid var(--line);border-radius:999px;padding:6px 12px}
+.logo-card[aria-pressed="true"] .pick{background:var(--ink);color:#fff;border-color:var(--ink);font-size:0}
+.logo-card[aria-pressed="true"] .pick::after{content:"Piste choisie";font-size:12.5px}
+
+/* Mockups */
+.mock-bar{position:sticky;top:env(safe-area-inset-top,0px);z-index:5;background:rgba(255,255,255,.85);backdrop-filter:blur(12px);border-bottom:1px solid var(--line);margin-bottom:28px}
+.mock-bar .in{display:flex;gap:6px;overflow-x:auto;padding-block:10px;scrollbar-width:none}
+.chip{appearance:none;font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--paper);color:var(--ink);border-radius:999px;padding:7px 14px 7px 8px;font-size:13px;font-weight:500;white-space:nowrap;display:flex;align-items:center;gap:8px}
+.chip .t{width:22px;height:22px;border-radius:6px;background:#000;color:#fff;padding:4px;display:block}
+.chip .t svg{width:100%;height:100%;display:block}
+.chip[aria-pressed="true"]{background:var(--ink);color:#fff;border-color:var(--ink)}
+.chip:focus-visible{outline:2px solid var(--stamp);outline-offset:2px}
+.mocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.mocks figure{margin:0}
+.mocks img{display:block;width:100%;height:auto;border-radius:20px;background:var(--soft)}
+.mocks figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:4px 12px;font-size:13px;color:var(--ink-3);padding:10px 4px 0}
+.mocks figcaption b{font-weight:500;color:var(--ink)}
+@media (max-width:620px){.mocks{grid-template-columns:minmax(0,1fr)}}
+
+/* Couleurs */
+.sw-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.sw{border:1px solid var(--line);border-radius:18px;overflow:hidden}
+.sw .c{height:110px}
+.sw .t{padding:12px 14px 14px;font-size:13px}
+.sw b{display:block;font-weight:600;font-size:14.5px}
+.sw code{font-family:inherit;color:var(--ink-2);font-variant-numeric:tabular-nums}
+.sw i{display:block;font-style:normal;color:var(--ink-3);font-size:12.5px;margin-top:2px}
+@media (max-width:820px){.sw-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.mistbar{position:relative;height:120px;border-radius:20px;overflow:hidden;margin-top:12px;border:1px solid var(--line)}
+.mistbar .mist{inset:-30%}
+.mistbar span{position:absolute;left:18px;bottom:14px;font-size:13px;font-weight:500}
+
+/* Typo */
+.type{display:grid;grid-template-columns:minmax(0,1.4fr) minmax(0,1fr);gap:16px}
+.type .card{background:var(--soft);border-radius:24px;padding:32px}
+.type .big{font-size:clamp(64px,9vw,112px);line-height:1;margin:16px 0;font-weight:600;letter-spacing:-.05em}
+.type .weights{display:flex;flex-wrap:wrap;gap:8px 20px;font-size:22px;letter-spacing:-.02em}
+.type .script{font-family:var(--script);font-size:clamp(64px,8vw,96px);line-height:1;margin:16px 0;color:var(--stamp)}
+.type .note{color:var(--ink-2);font-size:14px;margin-top:12px}
+@media (max-width:760px){.type{grid-template-columns:minmax(0,1fr)}}
+
+/* Usage */
+.rules{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
+.rule{border:1px solid var(--line);border-radius:22px;overflow:hidden}
+.rule .demo{position:relative;aspect-ratio:16/10;display:grid;place-items:center;padding:28px;background:var(--soft)}
+.rule .demo svg{width:62%;height:auto}
+.rule p{padding:14px 18px 18px;font-size:14px;color:var(--ink-2)}
+.rule p b{color:var(--ink);font-weight:600}
+.clear{outline:1px dashed var(--guide);outline-offset:16px}
+.no::after{content:"";position:absolute;inset:16px;background:linear-gradient(to top right,transparent calc(50% - .75px),var(--red) calc(50% - .75px),var(--red) calc(50% + .75px),transparent calc(50% + .75px))}
+@media (max-width:820px){.rules{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:520px){.rules{grid-template-columns:minmax(0,1fr)}}
+
+/* Suite */
+.next{position:relative;overflow:hidden;border-radius:32px;margin-inline:max(12px,env(safe-area-inset-left,0px));background:#000;color:#fff}
+.next .wrap{position:relative;padding-block:clamp(56px,8vw,96px)}
+.next .eyebrow{color:#9b9b9b}
+.next h2{color:#fff}
+.steps{list-style:none;margin:40px 0 0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:20px;counter-reset:s}
+.steps li{counter-increment:s;border-top:1px solid rgba(255,255,255,.18);padding-top:14px;display:grid;gap:6px}
+.steps li::before{content:counter(s,decimal-leading-zero);font-size:12px;color:#8f8f8f;font-variant-numeric:tabular-nums}
+.steps b{font-weight:600;font-size:17px}
+.steps span{color:#bdbdbd;font-size:14.5px}
+@media (max-width:800px){.steps{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media (max-width:480px){.steps{grid-template-columns:minmax(0,1fr)}}
+.next-mark{width:min(320px,70%);color:#fff;margin-top:40px}
+.next-mark svg{width:100%;height:auto;display:block}
+footer{padding-block:36px;font-size:13px;color:var(--ink-3)}
+@keyframes nblink{0%,55%{opacity:1}56%,100%{opacity:0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}}
+</style>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+%%SYMBOLS%%
+</svg>
+
+<header class="cover">
+  <div class="mist"></div>
+  <div class="wrap">
+    <p class="eyebrow">Identité visuelle · proposition</p>
+    <h1 style="margin-top:18px">Vous apportez l’idée,<br>on la rend réelle.</h1>
+    <p class="sub">Six pistes pour donner au logo de Nappli la personnalité que le site a déjà.</p>
+    <div class="meta"><span>6 pistes</span><span>8 mockups par piste</span><span>Inter + une signature</span></div>
+  </div>
+</header>
+
+<main>
+<section id="depart">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">01 · Le point de départ</p><h2>Simple et lisible. Il manque juste un détail qui ne soit qu’à vous.</h2></div>
+      <p>Le site a une vraie direction : beaucoup de blanc, une brume pastel, des pilules noires, une signature à la main. Le logo actuel, lui, pourrait appartenir à n’importe quel studio. Chaque piste garde Inter et le noir, et ajoute un seul détail.</p>
+    </div>
+    <div class="now">
+      <div class="card">
+        <svg viewBox="%%VB_CURRENT%%" style="width:52%;height:auto" role="img" aria-label="Logo actuel"><use href="#cur-word"/></svg>
+        <div style="width:72px;height:72px;flex:none">%%CUR_ICON%%</div>
+      </div>
+      <div class="verdict">
+        <div><b>On garde</b><span>Inter, le noir sur blanc, la sobriété, et le point de votre petit n·.</span></div>
+        <div><b>Il manque</b><span>Un signe que l’on reconnaît sans lire le nom, et un lien avec votre métier.</span></div>
+        <div><b>Le risque</b><span>Le n· seul ressemble à beaucoup d’icônes existantes ; il a besoin d’une raison d’être.</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section id="logos" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">02 · Les pistes</p><h2>Six détails, une seule police.</h2></div>
+      <p>Choisissez une piste : les mockups, les exemples d’usage et la suite de la page s’adaptent à votre choix.</p>
+    </div>
+    <div class="logos">%%CARDS%%</div>
+  </div>
+</section>
+
+<section id="mockups" style="padding-top:0">
+  <div class="mock-bar"><div class="wrap in" role="group" aria-label="Choisir le logo affiché sur les mockups">%%CHIPS%%</div></div>
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">03 · En situation</p><h2 id="mock-title">Pastille, en situation.</h2></div>
+      <p>Icône d’app, écran d’ouverture, site, réseaux, cartes de visite, devis, et deux vraies photos : votre site sur un ordinateur et la porte du studio.</p>
+    </div>
+    <div class="mocks">%%FIGS%%</div>
+  </div>
+</section>
+
+<section id="couleurs" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">04 · Couleurs</p><h2>Celles du site, sans en ajouter.</h2></div>
+      <p>Le noir et le blanc portent tout. Les trois couleurs d’accent servent au détail du logo choisi, jamais en aplat. La brume reste un fond.</p>
+    </div>
+    <div class="sw-grid">%%SWATCHES%%</div>
+    <div class="mistbar"><div class="mist"></div><span>Brume · #BDEBF0 · #CFE6FF · #DCD6FF · #FFD9E8</span></div>
+  </div>
+</section>
+
+<section id="typo" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">05 · Typographie</p><h2>Inter pour tout, une signature pour l’humain.</h2></div>
+      <p>Une seule famille sur le site, dans l’app et les documents. La signature manuscrite reste rare : la vôtre, sous un devis ou une citation.</p>
+    </div>
+    <div class="type">
+      <div class="card"><p class="eyebrow">Inter · titres et texte</p><div class="big">Aa</div>
+        <div class="weights"><span style="font-weight:400">Regular</span><span style="font-weight:500">Medium</span><span style="font-weight:600">SemiBold</span><span style="font-weight:700">Bold</span></div>
+        <p class="note">Titres en SemiBold, interlettrage serré (−3 à −4,5 %). Texte en Regular, gris #5C5C5C pour le secondaire.</p></div>
+      <div class="card"><p class="eyebrow">Allura · signature</p><div class="script">Fait avec soin.</div>
+        <p class="note">Une à deux fois par page au maximum, en bleu tampon.</p></div>
+    </div>
+  </div>
+</section>
+
+<section id="usage" style="padding-top:0">
+  <div class="wrap">
+    <div class="sec-head">
+      <div><p class="eyebrow">06 · Usage</p><h2>Le logo a besoin d’air.</h2></div>
+      <p>Les exemples montrent la piste <span class="sel-name">Pastille</span>. Les règles valent pour toutes.</p>
+    </div>
+    <div class="rules">
+      <div class="rule"><div class="demo"><svg class="sel clear" viewBox="%%VB0%%"><use href="#main-pastille"/></svg></div><p><b>Zone de protection.</b> Un espace libre égal à la hauteur du n tout autour.</p></div>
+      <div class="rule"><div class="demo" style="background:#000;color:#fff"><svg class="sel" viewBox="%%VB0%%"><use href="#main-pastille"/></svg></div><p><b>Noir ou blanc.</b> Les accents gardent leur couleur dans les deux cas.</p></div>
+      <div class="rule"><div class="demo" style="background:transparent;overflow:hidden"><div class="mist" style="inset:-40%"></div><svg class="sel" viewBox="%%VB0%%" style="position:relative"><use href="#main-pastille"/></svg></div><p><b>Sur la brume.</b> Toujours en noir, la brume reste claire derrière.</p></div>
+      <div class="rule"><div class="demo"><svg class="sel" viewBox="%%VB0%%" style="width:26%"><use href="#main-pastille"/></svg></div><p><b>Taille minimum.</b> 80 px de large à l’écran, 18 mm imprimé. En dessous, l’icône.</p></div>
+      <div class="rule"><div class="demo no"><svg class="sel" viewBox="%%VB0%%" style="transform:scaleX(1.4)"><use href="#main-pastille"/></svg></div><p><b>Ne pas déformer</b> ni changer l’interlettrage.</p></div>
+      <div class="rule"><div class="demo no" style="color:var(--stamp)"><svg class="sel" viewBox="%%VB0%%" style="filter:drop-shadow(3px 3px 0 #FF9FBF)"><use href="#main-pastille"/></svg></div><p><b>Pas d’effets</b> ni de dégradé dans les lettres.</p></div>
+    </div>
+  </div>
+</section>
+
+<section style="padding-top:0">
+  <div class="next">
+    <div class="mist" style="opacity:.25"></div>
+    <div class="wrap">
+      <p class="eyebrow">07 · Prochaine étape</p>
+      <h2 id="choice-line">Choisissez une piste plus haut, puis on l’affine.</h2>
+      <ol class="steps">
+        <li><b>Choix</b><span>Retenir une piste, ou deux à comparer.</span></li>
+        <li><b>Affinage</b><span>Poids, interlettrage, taille et place du détail.</span></li>
+        <li><b>Déclinaisons</b><span>Favicon, icônes iOS et Android, réseaux, papeterie.</span></li>
+        <li><b>Intégration</b><span>Le logo et l’icône mis à jour sur nappli.fr.</span></li>
+      </ol>
+      <div class="next-mark"><svg class="sel" viewBox="%%VB0%%" aria-hidden="true"><use href="#main-pastille"/></svg></div>
+    </div>
+  </div>
+</section>
+</main>
+<footer><div class="wrap">Nappli · identité visuelle · proposition, version 1</div></footer>
+
+<script>
+(function(){
+  var NAMES=%%NAMES%%, VB=%%VBS%%;
+  var shots=%%SHOTS%%, chosen=false;
+  function select(k,explicit){
+    if(!NAMES[k]) return;
+    if(explicit) chosen=true;
+    shots.forEach(function(s){var im=document.getElementById('mk-'+s); if(im) im.src='mockups/'+k+'-'+s+'.jpg';});
+    document.querySelectorAll('.chip[data-k]').forEach(function(b){b.setAttribute('aria-pressed',b.getAttribute('data-k')===k?'true':'false');});
+    document.querySelectorAll('.logo-card[data-k]').forEach(function(b){b.setAttribute('aria-pressed',chosen&&b.getAttribute('data-k')===k?'true':'false');});
+    document.getElementById('mock-title').textContent=NAMES[k]+', en situation.';
+    document.querySelectorAll('svg.sel').forEach(function(sv){sv.setAttribute('viewBox',VB[k]);sv.querySelector('use').setAttribute('href','#main-'+k);});
+    document.querySelectorAll('.sel-name').forEach(function(e){e.textContent=NAMES[k];});
+    if(chosen){
+      document.getElementById('choice-line').textContent='Piste retenue : '+NAMES[k]+'. On l’affine ensemble.';
+      try{localStorage.setItem('nappli-logo',k);}catch(e){}
+    }
+  }
+  document.querySelectorAll('[data-k]').forEach(function(b){
+    b.addEventListener('click',function(){select(b.getAttribute('data-k'),true); if(b.classList.contains('logo-card')) document.getElementById('mockups').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
+  });
+  var start=(location.hash||'').slice(1), saved=null;
+  try{saved=localStorage.getItem('nappli-logo');}catch(e){}
+  if(NAMES[start]) select(start,true); else if(NAMES[saved]) select(saved,true); else select('pastille',false);
+  setTimeout(function(){Object.keys(NAMES).forEach(function(k){shots.forEach(function(s){var i=new Image(); i.src='mockups/'+k+'-'+s+'.jpg';});});},1500);
+})();
+</script>
