@@ -13,7 +13,7 @@ pages=[]
 # 1 cover
 pages.append(f'''<section class="pg cover">
   <div class="eyebrow light">Identité visuelle · proposition</div>
-  <div class="cover-logo">{logo("buong")}</div>
+  <div class="dict"><p class="word">lơi</p><p class="pron">[ləːj] · <i>adjectif, vietnamien</i></p><p class="def">Souple, ondulant, flottant : ce qui bouge librement, sans être retenu.</p></div>
   <div class="cover-bottom">
     <p class="quote">Vẻ đẹp là sự tự do cảm xúc,<br>vẻ đẹp là không khuôn khổ.</p>
     <p class="fr">La beauté est la liberté des émotions.<br>La beauté n’a pas de cadre.</p>
@@ -44,7 +44,7 @@ pages.append(f'''<section class="pg"><div class="head"><div class="eyebrow">02 �
 # 4.. one page per concept
 for i,(k,n,st,d,r) in enumerate(META):
     n_pg=4+i
-    mocks=''.join(f'<figure><img src="file://{MK}{k}-{s}.jpg"><figcaption>{cap}</figcaption></figure>' for s,cap in [('boite','Boîte cadeau kraft'),('devanture','Devanture'),('sac','Sac en papier'),('ecran','Site web')])
+    mocks=''.join(f'<figure><img src="file://{MK}{k}-{s}.jpg"><figcaption>{cap}</figcaption></figure>' for s,cap in [('boite','Boîte cadeau kraft'),('devanture','Devanture'),('sac','Sac en papier'),('ecran','Site web'),('appli','Appli · icône'),('appli-ecrans','Appli · écrans')])
     pages.append(f'''<section class="pg concept">
   <div class="cleft">
     <div class="eyebrow">Piste {i+1:02d} · {st}</div>
@@ -90,7 +90,7 @@ pages.append(f'''<section class="pg"><div class="head"><div class="eyebrow">04 �
 # usage
 B='buong'
 pages.append(f'''<section class="pg"><div class="head"><div class="eyebrow">05 · Usage du logo</div><h1>Laisser respirer le logo.</h1>
-<p class="lead narrow">Comme un bouquet <i>lơi</i>, le logo a besoin d’air autour de lui. Ces règles valent pour la piste retenue.</p></div>
+<p class="lead narrow">Comme un bouquet <i>lơi</i>, le logo a besoin d’air autour de lui. Exemples avec la piste Buông ; les règles valent pour toutes les pistes.</p></div>
 <div class="rules">
  <div class="rc"><div class="demo"><div class="clear">{logo(B)}</div></div><p><b>Zone de protection.</b> Un espace vide égal à la hauteur du O tout autour.</p></div>
  <div class="rc"><div class="demo" style="background:var(--reu);color:var(--lua)">{logo(B)}</div><p><b>Deux couleurs.</b> Encre sur fond clair, crème sur mousse, feuillage ou photo sombre.</p></div>
@@ -111,7 +111,7 @@ pages.append(f'''<section class="pg cover end">
       <li><span><b>Livraison.</b> Fichiers vectoriels et guide d’usage complet.</span></li>
     </ol>
   </div>
-  <div class="end-logo">{logo("an")}</div></section>''')
+  </section>''')
 css=open('pdf.css').read().replace('%%FD%%',FD)
 html=f'<!doctype html><html lang="fr"><head><meta charset="utf-8"><title>LƠI Fleur · Identité visuelle</title><style>{css}</style></head><body><svg width="0" height="0" style="position:absolute">{sym}</svg>{"".join(pages)}</body></html>'
 open('/tmp/claude-0/-home-user-floristapp/610656c1-7c28-5e23-9b56-a3d8582b25a7/scratchpad/deck.html','w').write(html)

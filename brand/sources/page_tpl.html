@@ -36,6 +36,10 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 /* Couverture */
 .cover{background:var(--reu);color:var(--lua)}
 .cover .wrap{padding-block:clamp(48px,9vw,112px);display:grid;grid-template-columns:minmax(0,1.1fr) minmax(0,1fr);gap:40px 64px;align-items:end}
+.dict{margin-top:24px}
+.dict .word{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-weight:300;font-size:clamp(96px,16vw,184px);line-height:.9;margin:0;letter-spacing:-.02em}
+.dict .pron{font-size:15px;letter-spacing:.02em;color:#C9C6AE;margin-top:18px}
+.dict .def{font-family:var(--serif);font-variation-settings:"SOFT" 100;font-size:clamp(19px,2vw,23px);line-height:1.35;margin-top:10px;max-width:24ch}
 .cover .mark{color:var(--lua);width:min(100%,520px)}
 .cover .mark svg{width:100%;height:auto;display:block}
 .cover .eyebrow{color:#C9C6AE}
@@ -72,7 +76,8 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 .logo-card .style{font-size:11px;letter-spacing:.18em;text-transform:uppercase;font-weight:500;color:var(--dat)}
 .logo-card p{font-size:14.5px;color:var(--muted);line-height:1.55}
 .logo-card .pick{font-size:12px;font-weight:500;letter-spacing:.12em;text-transform:uppercase;color:var(--reu);margin-top:6px}
-.logo-card[aria-pressed="true"] .pick::before{content:"● "}
+.logo-card[aria-pressed="true"] .pick{font-size:0}
+.logo-card[aria-pressed="true"] .pick::after{content:"● Piste choisie";font-size:12px}
 .reco{display:inline-block;font-size:10.5px;letter-spacing:.16em;text-transform:uppercase;font-weight:500;background:var(--reu);color:var(--lua);padding:3px 8px;vertical-align:middle;margin-left:8px}
 
 /* Déclinaisons couleur */
@@ -142,7 +147,7 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 @media (max-width:760px){.voice{grid-template-columns:minmax(0,1fr)}}
 .next{background:var(--reu);color:var(--lua);border-top:0}
 .next .eyebrow{color:#C9C6AE}
-.next-mark{width:110px;height:110px;color:var(--lua);justify-self:end}
+.next-mark{width:200px;height:110px;color:var(--lua);justify-self:end}
 .next-mark svg{width:100%;height:100%}
 .steps{list-style:none;margin:0;padding:0;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:24px;counter-reset:s}
 .steps li{counter-increment:s;border-top:1px solid rgba(238,231,218,.3);padding-top:14px;display:grid;gap:6px}
@@ -163,12 +168,16 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
   <div class="wrap">
     <div>
       <p class="eyebrow">Identité visuelle · proposition</p>
-      <div class="mark" style="margin-top:28px"><svg viewBox="%%VB_buong%%" role="img" aria-label="LƠI Fleur"><use href="#m-buong"/></svg></div>
+      <div class="dict">
+        <p class="word">lơi</p>
+        <p class="pron">[ləːj] · <i>adjectif, vietnamien</i></p>
+        <p class="def">Souple, ondulant, flottant : ce qui bouge librement, sans être retenu.</p>
+      </div>
     </div>
     <div>
       <blockquote>Vẻ đẹp là sự tự do cảm xúc, vẻ đẹp là không khuôn khổ.
         <span>La beauté est la liberté des émotions. La beauté n’a pas de cadre.</span></blockquote>
-      <div class="cover-meta eyebrow"><span>6 pistes de logo</span><span>24 mockups</span><span>7 couleurs</span><span>2 polices</span></div>
+      <div class="cover-meta eyebrow"><span>6 pistes de logo</span><span>6 mockups par piste</span><span>7 couleurs</span><span>2 polices</span></div>
     </div>
   </div>
 </header>
@@ -200,7 +209,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">02 · Logo</p><h2>Six pistes, six manières de dire « lơi ».</h2></div>
-      <p>Chaque piste traduit le nom différemment. Le signe commun : le crochet du <span class="serif">Ơ</span> vietnamien, qui devient une feuille, un pétale ou une tige. Cliquez sur une piste pour la voir sur les mockups plus bas.</p>
+      <p>Chaque piste traduit le nom différemment. Le signe commun : le crochet du <span class="serif">Ơ</span> vietnamien, qui devient une feuille, un pétale ou une tige. Choisissez une piste : les mockups, les règles d’usage et la suite de la page s’adaptent à votre choix.</p>
     </div>
     <div class="logos" id="logo-grid">%%CARDS%%</div>
   </div>
@@ -211,13 +220,15 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">03 · Mockups</p><h2 id="mock-title">Buông, en situation.</h2></div>
-      <p>La piste choisie, en situation : boîte cadeau en kraft imprimée à l’encre, store en toile mousse et vitrophanie blanche, sac en papier, site web. Changez de piste avec les boutons ci-dessus.</p>
+      <p>La piste choisie, en situation : boîte cadeau en kraft, devanture, sac en papier, site web et application mobile. Changez de piste avec les boutons ci-dessus.</p>
     </div>
     <div class="mocks">
       <figure><img id="mk-boite" alt="Boîte cadeau en kraft posée sur une pierre, logo imprimé" width="919" height="1149" src="mockups/buong-boite.jpg"><figcaption><b>Boîte cadeau kraft</b><span>impression 1 couleur, encre Mực</span></figcaption></figure>
       <figure><img id="mk-devanture" alt="Devanture de la boutique avec store vert mousse et vitrine" width="919" height="1149" src="mockups/buong-devanture.jpg"><figcaption><b>Devanture</b><span>store Rêu, lettrage crème · vitrophanie</span></figcaption></figure>
       <figure><img id="mk-sac" alt="Sac en papier crème porté à la main, logo imprimé" width="919" height="1149" src="mockups/buong-sac.jpg"><figcaption><b>Sac en papier</b><span>papier crème, encre Mực</span></figcaption></figure>
       <figure><img id="mk-ecran" alt="Ordinateur portable affichant le site de la boutique" width="919" height="1149" src="mockups/buong-ecran.jpg"><figcaption><b>Site web</b><span>fond Rêu, texte Lụa</span></figcaption></figure>
+      <figure><img id="mk-appli" alt="Téléphone affichant l’écran d’ouverture de l’application, avec son icône" width="919" height="1149" src="mockups/buong-appli.jpg"><figcaption><b>Application · icône</b><span>écran d’ouverture et icône</span></figcaption></figure>
+      <figure><img id="mk-appli-ecrans" alt="Deux téléphones affichant l’accueil et une fiche produit de l’application" width="919" height="1149" src="mockups/buong-appli-ecrans.jpg"><figcaption><b>Application · écrans</b><span>accueil et fiche produit</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -269,15 +280,15 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">06 · Usage du logo</p><h2>Laisser respirer le logo.</h2></div>
-      <p>Comme un bouquet <em>lơi</em>, le logo a besoin d’air autour de lui. Ces règles valent pour toutes les pistes.</p>
+      <p>Comme un bouquet <em>lơi</em>, le logo a besoin d’air autour de lui. Les exemples ci-dessous montrent la piste <span class="sel-name">Buông</span>.</p>
     </div>
     <div class="rules">
-      <div class="card"><div class="demo"><svg class="clear" viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Zone de protection.</b> Garder autour du logo un espace vide égal à la hauteur du <span class="serif">O</span>.</p></div>
-      <div class="card"><div class="demo" style="background:var(--reu);color:var(--lua)"><svg viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Deux couleurs seulement.</b> Encre Mực sur fond clair, crème Lụa sur fond Rêu, Lá ou photo sombre.</p></div>
-      <div class="card"><div class="demo"><svg viewBox="%%VB_buong%%" style="max-width:34%"><use href="#m-buong"/></svg></div><p><b>Taille minimum.</b> 25 mm de large en impression, 120 px à l’écran. En dessous, utiliser l’arche ou le cachet.</p></div>
-      <div class="card"><div class="demo no"><svg viewBox="%%VB_buong%%" style="transform:scaleX(1.45)"><use href="#m-buong"/></svg></div><p><b>Ne pas déformer</b> ni étirer le logo.</p></div>
-      <div class="card"><div class="demo no" style="color:var(--dat)"><svg viewBox="%%VB_buong%%" style="filter:drop-shadow(4px 4px 0 #26301F)"><use href="#m-buong"/></svg></div><p><b>Ne pas ajouter</b> d’ombre, de contour ni de couleur vive.</p></div>
-      <div class="card"><div class="demo no" style="background:linear-gradient(120deg,#c9a7b8,#a7b8c9)"><svg viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Éviter les fonds chargés</b> ou colorés qui étouffent le trait fin.</p></div>
+      <div class="card"><div class="demo"><svg class="clear sel" viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Zone de protection.</b> Garder autour du logo un espace vide égal à la hauteur du <span class="serif">O</span>.</p></div>
+      <div class="card"><div class="demo" style="background:var(--reu);color:var(--lua)"><svg class="sel" viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Deux couleurs seulement.</b> Encre Mực sur fond clair, crème Lụa sur fond Rêu, Lá ou photo sombre.</p></div>
+      <div class="card"><div class="demo"><svg class="sel" viewBox="%%VB_buong%%" style="max-width:34%"><use href="#m-buong"/></svg></div><p><b>Taille minimum.</b> 25 mm de large en impression, 120 px à l’écran. En dessous, utiliser l’arche ou le cachet.</p></div>
+      <div class="card"><div class="demo no"><svg class="sel" viewBox="%%VB_buong%%" style="transform:scaleX(1.45)"><use href="#m-buong"/></svg></div><p><b>Ne pas déformer</b> ni étirer le logo.</p></div>
+      <div class="card"><div class="demo no" style="color:var(--dat)"><svg class="sel" viewBox="%%VB_buong%%" style="filter:drop-shadow(4px 4px 0 #26301F)"><use href="#m-buong"/></svg></div><p><b>Ne pas ajouter</b> d’ombre, de contour ni de couleur vive.</p></div>
+      <div class="card"><div class="demo no" style="background:linear-gradient(120deg,#c9a7b8,#a7b8c9)"><svg class="sel" viewBox="%%VB_buong%%"><use href="#m-buong"/></svg></div><p><b>Éviter les fonds chargés</b> ou colorés qui étouffent le trait fin.</p></div>
     </div>
   </div>
 </section>
@@ -299,11 +310,11 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
 <section id="suite" class="next">
   <div class="wrap">
     <div class="sec-head">
-      <div><p class="eyebrow">08 · Prochaine étape</p><h2>Choisir une piste, puis l’affiner ensemble.</h2></div>
-      <div class="next-mark"><svg viewBox="%%VB_an%%" aria-hidden="true"><use href="#m-an"/></svg></div>
+      <div><p class="eyebrow">08 · Prochaine étape</p><h2 id="choice-line">Choisissez une piste plus haut, puis affinons-la ensemble.</h2></div>
+      <div class="next-mark"><svg class="sel" viewBox="%%VB_buong%%" aria-hidden="true"><use href="#m-buong"/></svg></div>
     </div>
     <ol class="steps">
-      <li><b>Sélection</b><span>Retenir une ou deux pistes parmi les six.</span></li>
+      <li><b>Sélection</b><span>Confirmer la piste, ou en garder deux à comparer.</span></li>
       <li><b>Affinage</b><span>Ajuster le dessin, les espacements et les couleurs.</span></li>
       <li><b>Déclinaisons</b><span>Cartes de visite, étiquettes, papier de soie, réseaux sociaux.</span></li>
       <li><b>Livraison</b><span>Fichiers vectoriels et guide d’usage complet.</span></li>
@@ -316,20 +327,29 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
 <script>
 (function(){
   var NAMES=%%NAMES%%;
-  var shots=['boite','devanture','sac','ecran'];
-  function select(k){
+  var VB=%%VBS%%;
+  var shots=['boite','devanture','sac','ecran','appli','appli-ecrans'];
+  var chosen=false;
+  function select(k,explicit){
     if(!NAMES[k]) return;
+    if(explicit) chosen=true;
     shots.forEach(function(s){var im=document.getElementById('mk-'+s); if(im) im.src='mockups/'+k+'-'+s+'.jpg';});
-    document.querySelectorAll('[data-k]').forEach(function(b){b.setAttribute('aria-pressed', b.getAttribute('data-k')===k?'true':'false');});
+    document.querySelectorAll('.chip[data-k]').forEach(function(b){b.setAttribute('aria-pressed', b.getAttribute('data-k')===k?'true':'false');});
+    document.querySelectorAll('.logo-card[data-k]').forEach(function(b){b.setAttribute('aria-pressed', chosen&&b.getAttribute('data-k')===k?'true':'false');});
     document.getElementById('mock-title').textContent=NAMES[k]+', en situation.';
-    try{localStorage.setItem('loi-logo',k);}catch(e){}
+    document.querySelectorAll('svg.sel').forEach(function(sv){sv.setAttribute('viewBox',VB[k]);sv.querySelector('use').setAttribute('href','#m-'+k);});
+    document.querySelectorAll('.sel-name').forEach(function(e){e.textContent=NAMES[k];});
+    if(chosen){
+      document.getElementById('choice-line').textContent='Piste retenue : '+NAMES[k]+'. Il reste à l’affiner ensemble.';
+      try{localStorage.setItem('loi-logo',k);}catch(e){}
+    }
   }
   document.querySelectorAll('[data-k]').forEach(function(b){
-    b.addEventListener('click',function(){select(b.getAttribute('data-k')); if(b.classList.contains('logo-card')) document.getElementById('mockups').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
+    b.addEventListener('click',function(){select(b.getAttribute('data-k'),true); if(b.classList.contains('logo-card')) document.getElementById('mockups').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});});
   });
-  var start=(location.hash||'').slice(1);
-  if(!NAMES[start]){try{start=localStorage.getItem('loi-logo')||'buong';}catch(e){start='buong';}}
-  select(NAMES[start]?start:'buong');
+  var start=(location.hash||'').slice(1), saved=null;
+  try{saved=localStorage.getItem('loi-logo');}catch(e){}
+  if(NAMES[start]) select(start,true); else if(NAMES[saved]) select(saved,true); else select('buong',false);
   // preload the other mockups once the page is idle
   setTimeout(function(){Object.keys(NAMES).forEach(function(k){shots.forEach(function(s){var i=new Image(); i.src='mockups/'+k+'-'+s+'.jpg';});});},1500);
 })();

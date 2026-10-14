@@ -109,6 +109,13 @@ out['tige']=dict(main=(f'4 -2 {W6+8:.0f} 280',word6+f6))
 f6l,fw6l,_=T(SANS,'FLEUR',58,W6+40,200,24)
 out['tige']['line']=(f'4 -2 {W6+40+fw6l+10:.0f} 214',word6+f6l)
 
+# app icons: square-friendly marks without the FLEUR line
+out['buong']['icon']=('-2 36 186 176',LETTER)
+out['laloi']['icon']=(f'-8 48 {w2+16:.0f} 206',P(d2)+P(sw))
+out['arche']['icon']=(f'{cx-aw-10} -4 {2*aw+20} 272',A)
+out['net']['icon']=(f'{ox-4:.0f} 18 {170:.0f} 192',P(dO)+petal)
+out['an']['icon']=out['an']['main']
+out['tige']['icon']=(f'4 -2 {W6+8:.0f} 214',word6)
 json.dump(out,open('concepts.json','w'))
 def svg(vb,body,color='#1F1E1A'):
     return f'<svg xmlns="http://www.w3.org/2000/svg" viewBox="{vb}" style="color:{color}" color="{color}">{body.replace("currentColor",color)}</svg>'
@@ -116,7 +123,7 @@ if __name__=='__main__':
     import cairosvg
     rows=[]
     for k,v in out.items():
-        for kind in ('main','line'):
+        for kind in ('main','line','icon'):
             vb,body=v[kind]
             open(f'{k}-{kind}.svg','w').write(svg(vb,body))
             cairosvg.svg2png(bytestring=svg(vb,body).encode(),write_to=f'{k}-{kind}.png',output_width=900 if kind=='line' else 600)

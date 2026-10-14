@@ -104,3 +104,10 @@ svg{display:block;width:100%;height:100%;fill:currentColor}
 .end h1{color:var(--lua)}
 .tbig{font-size:40pt}
 .grid2{align-content:center;height:auto;margin-top:8mm}
+
+.mocks{grid-template-columns:repeat(3,1fr)}
+.concept{grid-template-columns:104mm 1fr}
+.dict .word{font-family:"FrSoft",serif;font-weight:300;font-size:120pt;line-height:.9;margin:0;color:var(--lua)}
+.dict .pron{font-size:11pt;color:#C9C6AE;margin:6mm 0 0}
+.dict .def{font-family:"FrSoft",serif;font-size:17pt;line-height:1.3;margin:3mm 0 0;max-width:120mm}
+.end .endgrid{margin-bottom:auto;margin-top:auto}
