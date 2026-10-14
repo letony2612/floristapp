@@ -111,3 +111,10 @@ svg{display:block;width:100%;height:100%;fill:currentColor}
 .dict .pron{font-size:11pt;color:#C9C6AE;margin:6mm 0 0}
 .dict .def{font-family:"FrSoft",serif;font-size:17pt;line-height:1.3;margin:3mm 0 0;max-width:120mm}
 .end .endgrid{margin-bottom:auto;margin-top:auto}
+.more{display:grid;grid-template-columns:repeat(4,1fr);gap:5mm}
+.more figure{margin:0}
+.more img{width:100%;height:auto;display:block}
+.more{margin-top:6mm}
+.more figcaption{font-size:7pt;letter-spacing:.16em;text-transform:uppercase;color:var(--muted);padding-top:2mm}
+.pg .head h1{margin-top:3mm}
+.more{margin-top:16mm}

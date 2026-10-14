@@ -96,7 +96,7 @@ section{padding-block:clamp(56px,8vw,104px);border-top:1px solid var(--line)}
 .chip:focus-visible{outline:2px solid var(--reu);outline-offset:2px}
 .mocks{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
 .mocks figure{margin:0}
-.mocks img{display:block;width:100%;height:auto;aspect-ratio:919/1149;object-fit:cover;background:var(--da)}
+.mocks img{display:block;width:100%;height:auto;background:var(--da)}
 .mocks figcaption{display:flex;flex-wrap:wrap;justify-content:space-between;gap:12px;font-size:13px;color:var(--muted);padding-top:10px}
 .mocks figcaption b{font-weight:500;color:var(--muc)}
 @media (max-width:620px){.mocks{grid-template-columns:minmax(0,1fr)}}
@@ -177,7 +177,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
     <div>
       <blockquote>Vẻ đẹp là sự tự do cảm xúc, vẻ đẹp là không khuôn khổ.
         <span>La beauté est la liberté des émotions. La beauté n’a pas de cadre.</span></blockquote>
-      <div class="cover-meta eyebrow"><span>6 pistes de logo</span><span>6 mockups par piste</span><span>7 couleurs</span><span>2 polices</span></div>
+      <div class="cover-meta eyebrow"><span>6 pistes de logo</span><span>10 mockups par piste</span><span>7 couleurs</span><span>2 polices</span></div>
     </div>
   </div>
 </header>
@@ -220,7 +220,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
   <div class="wrap">
     <div class="sec-head">
       <div><p class="eyebrow">03 · Mockups</p><h2 id="mock-title">Buông, en situation.</h2></div>
-      <p>La piste choisie, en situation : boîte cadeau en kraft, devanture, sac en papier, site web et application mobile. Changez de piste avec les boutons ci-dessus.</p>
+      <p>La piste choisie, en situation : boîte cadeau en kraft, devanture, sac, site web, application mobile, porte vitrée, vase, vitrine et enseigne. Changez de piste avec les boutons ci-dessus.</p>
     </div>
     <div class="mocks">
       <figure><img id="mk-boite" alt="Boîte cadeau en kraft posée sur une pierre, logo imprimé" width="919" height="1149" src="mockups/buong-boite.jpg"><figcaption><b>Boîte cadeau kraft</b><span>impression 1 couleur, encre Mực</span></figcaption></figure>
@@ -229,6 +229,10 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
       <figure><img id="mk-ecran" alt="Ordinateur portable affichant le site de la boutique" width="919" height="1149" src="mockups/buong-ecran.jpg"><figcaption><b>Site web</b><span>fond Rêu, texte Lụa</span></figcaption></figure>
       <figure><img id="mk-appli" alt="Téléphone affichant l’écran d’ouverture de l’application, avec son icône" width="919" height="1149" src="mockups/buong-appli.jpg"><figcaption><b>Application · icône</b><span>écran d’ouverture et icône</span></figcaption></figure>
       <figure><img id="mk-appli-ecrans" alt="Deux téléphones affichant l’accueil et une fiche produit de l’application" width="919" height="1149" src="mockups/buong-appli-ecrans.jpg"><figcaption><b>Application · écrans</b><span>accueil et fiche produit</span></figcaption></figure>
+      <figure><img id="mk-porte" alt="Porte en verre cannelé avec le logo en vitrophanie" width="1013" height="1350" src="mockups/buong-porte.jpg"><figcaption><b>Porte vitrée</b><span>verre cannelé, vitrophanie crème</span></figcaption></figure>
+      <figure><img id="mk-canette" alt="Canette en aluminium servant de vase, logo imprimé" width="1013" height="1350" src="mockups/buong-canette.jpg"><figcaption><b>Canette-vase</b><span>aluminium, impression encre</span></figcaption></figure>
+      <figure><img id="mk-vitrine" alt="Vitrine de la boutique avec plantes, logo en vitrophanie" width="1013" height="1350" src="mockups/buong-vitrine.jpg"><figcaption><b>Vitrine</b><span>vitrophanie crème</span></figcaption></figure>
+      <figure><img id="mk-enseigne" alt="Enseigne ronde en drapeau sur la façade" width="1013" height="1350" src="mockups/buong-enseigne.jpg"><figcaption><b>Enseigne drapeau</b><span>disque terre cuite, lettrage crème</span></figcaption></figure>
     </div>
   </div>
 </section>
@@ -328,7 +332,7 @@ footer{border-top:1px solid var(--line);padding-block:32px;font-size:13px;color:
 (function(){
   var NAMES={"buong": "Buông", "laloi": "Lả lơi", "arche": "Arche", "net": "Nét", "an": "Ấn", "tige": "Tige"};
   var VB={"buong": "0 0 384 250", "laloi": "0 0 309 206", "arche": "0 0 346 330", "net": "0 0 436 262", "an": "0 0 248 248", "tige": "0 0 239 280"};
-  var shots=['boite','devanture','sac','ecran','appli','appli-ecrans'];
+  var shots=['boite','devanture','sac','ecran','appli','appli-ecrans','porte','canette','vitrine','enseigne'];
   var chosen=false;
   function select(k,explicit){
     if(!NAMES[k]) return;

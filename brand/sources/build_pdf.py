@@ -6,7 +6,7 @@ MK='/home/user/floristapp/brand/mockups/'
 def logo(k,kind='main',cls=''):
     return f'<svg class="{cls}" viewBox="{z(C[k][kind][0])}"><use href="#{"m" if kind=="main" else "l"}-{k}"/></svg>'
 sym=''.join(f'<symbol id="m-{k}" viewBox="{v["main"][0]}">{v["main"][1]}</symbol><symbol id="l-{k}" viewBox="{v["line"][0]}">{v["line"][1]}</symbol>' for k,v in C.items())
-TOTAL=7+len(META)
+TOTAL=7+2*len(META)
 def foot(n,label):
     return f'<div class="foot"><span>LƠI Fleur · {label}</span><span>{n:02d} / {TOTAL:02d}</span></div>'
 pages=[]
@@ -43,7 +43,7 @@ pages.append(f'''<section class="pg"><div class="head"><div class="eyebrow">02 �
 <div class="ovgrid">{cells}</div>{foot(3,"Les pistes")}</section>''')
 # 4.. one page per concept
 for i,(k,n,st,d,r) in enumerate(META):
-    n_pg=4+i
+    n_pg=4+2*i
     mocks=''.join(f'<figure><img src="file://{MK}{k}-{s}.jpg"><figcaption>{cap}</figcaption></figure>' for s,cap in [('boite','Boîte cadeau kraft'),('devanture','Devanture'),('sac','Sac en papier'),('ecran','Site web'),('appli','Appli · icône'),('appli-ecrans','Appli · écrans')])
     pages.append(f'''<section class="pg concept">
   <div class="cleft">
@@ -60,13 +60,16 @@ for i,(k,n,st,d,r) in enumerate(META):
   </div>
   <div class="mocks">{mocks}</div>
   {foot(n_pg,"Piste "+n)}</section>''')
+    more=''.join(f'<figure><img src="file://{MK}{k}-{s}.jpg"><figcaption>{cap}</figcaption></figure>' for s,cap in [('porte','Porte vitrée'),('canette','Canette-vase'),('vitrine','Vitrine'),('enseigne','Enseigne drapeau')])
+    pages.append(f'''<section class="pg"><div class="head"><div class="eyebrow">Piste {i+1:02d} · {st}</div><h1>{n}, en situation</h1></div>
+  <div class="more">{more}</div>{foot(n_pg+1,"Piste "+n)}</section>''')
 # colours
 SW=[('Lụa','crème soie','#EEE7DA','238 231 218','5 7 14 0',45),('Đá','pierre','#D8CCB6','216 204 182','15 17 28 0',18),('Rêu','mousse','#4B5138','75 81 56','62 45 78 40',14),
     ('Kraft','papier','#B7976C','183 151 108','29 40 63 5',10),('Mực','encre','#1F1E1A','31 30 26','68 64 68 78',8),('Lá','feuillage','#26301F','38 48 31','72 52 82 66',3),('Đất','terre cuite','#A35E3F','163 94 63','25 66 78 15',2)]
 sw=''.join(f'<div class="sw"><div class="c" style="background:{h}"></div><b>{nm}</b><i>{dsc}</i><code>{h}<br>RVB {rv}<br>CMJN {cm}</code></div>' for nm,dsc,h,rv,cm,p in SW)
 ratio=''.join(f'<span style="flex:{p};background:{h}"></span>' for nm,dsc,h,rv,cm,p in SW)
 leg=''.join(f'<span>{nm} {p} %</span>' for nm,dsc,h,rv,cm,p in SW)
-n0=4+len(META)
+n0=4+2*len(META)
 pages.append(f'''<section class="pg"><div class="head"><div class="eyebrow">03 · Couleurs</div><h1>Une palette de matières : soie, pierre, papier, mousse.</h1>
 <p class="lead narrow">Les fleurs apportent la couleur vive ; la marque reste en retrait pour les laisser parler.</p></div>
 <div class="swatches">{sw}</div><div class="ratio">{ratio}</div><div class="legend"><span>Proportions conseillées</span>{leg}</div>
